@@ -1,0 +1,23 @@
+{
+  "builders": [
+    {
+      "type": "googlecompute",
+      "account_file": "<SERVICE_ACCOUNT_FILENAME>",
+      "project_id": "<PROJECT_ID>",
+      "source_image_family": "debian-9",
+      "zone": "us-central1-a",
+      "ssh_username": "packer"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "br.log",
+      "destination": "/tmp/br.log"
+    },
+    {
+      "type": "shell",
+      "inline": "mv /tmp/br.log /home/packer/"
+    }
+  ]
+}
