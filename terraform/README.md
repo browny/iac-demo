@@ -27,7 +27,7 @@ gcloud iam service-accounts keys create $KEY_PATH \
 1. Set parameter
 
 ```
-sed 's/<SERVICE_ACCOUNT_FILENAME>/'"$SERVICE_ACCOUNT_NAME.json"'/g;s/<PROJECT_ID>/'"$GOOGLE_CLOUD_PROJECT"'/g' tmp.tf > main.tf
+sed 's/<SERVICE_ACCOUNT_FILENAME>/'"$SERVICE_ACCOUNT_NAME.json"'/g;s/<PROJECT_ID>/'"$GOOGLE_CLOUD_PROJECT"'/g' tmp > main.tf
 ```
 
 1. Install terraform
@@ -41,7 +41,7 @@ sudo apt-get update && sudo apt-get install terraform
 1. Run terraform
 
 ```
-terraform init -backend-config=my-tmp.tf
+terraform init
 terraform plan
 terraform apply
 terraform destroy
