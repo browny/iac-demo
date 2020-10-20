@@ -30,7 +30,7 @@
 1. Set parameter
 
     ```
-    sed 's/<SERVICE_ACCOUNT_FILENAME>/'"$SERVICE_ACCOUNT_NAME.json"'/g;s/<PROJECT_ID>/'"$GOOGLE_CLOUD_PROJECT"'/g' packer.json > my-tmp.json
+    sed 's/<SERVICE_ACCOUNT_FILENAME>/'"$SERVICE_ACCOUNT_NAME.json"'/g;s/<PROJECT_ID>/'"$GOOGLE_CLOUD_PROJECT"'/g' tmp > packer.json
     ```
 
 1. Install packer
@@ -44,6 +44,6 @@
 1. Run packer
 
     ```
-    packer validate my-tmp.json
-    packer build my-tmp.json
+    packer validate packer.json
+    packer build packer.json
     ```
